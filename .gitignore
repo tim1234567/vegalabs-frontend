@@ -1,0 +1,15 @@
+node_modules
+.cache
+.vscode
+.project
+.DS_Store
+.next
+dist
+coverage
+build
+src/**/generated
+yarn-error.log
+codegen.yml
+out
+/report*.json
+tsconfig.tsbuildinfo

@@ -1,0 +1,17 @@
+{
+  "contracts": {
+    "trading": {
+      "address": "",
+      "networkId": 137,
+      "creationBlock": 0
+    }
+  },
+  "subgraphs": {},
+  "networks": {
+    "polygon": {
+      "id": 137,
+      "etherscanDomain": "https://polygonscan.com/",
+      "nativeCurrency": "MATIC"
+    }
+  }
+}

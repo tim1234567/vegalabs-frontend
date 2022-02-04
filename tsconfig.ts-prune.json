@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "files": [
+    "src/pages/**/*.ts",
+    "src/pages/**/*.tsx"
+  ],
+}

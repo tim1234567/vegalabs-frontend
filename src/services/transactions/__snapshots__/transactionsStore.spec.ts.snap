@@ -1,0 +1,509 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addTransactionPayload should create new payload record and keep old payloads 1`] = `
+Object {
+  "args": Array [
+    "3",
+    "txPayload",
+  ],
+  "prevValue": Object {
+    "1": "txPayload",
+    "2": "txPayload",
+  },
+  "result": Object {
+    "1": "txPayload",
+    "2": "txPayload",
+    "3": "txPayload",
+  },
+}
+`;
+
+exports[`addTransactionPayload should replace payload for existing transaction ID 1`] = `
+Object {
+  "args": Array [
+    "1",
+    Object {
+      "txStatusContent": Object {
+        "network": "polygon",
+        "title": Object {
+          "long": "111",
+          "short": "1",
+        },
+      },
+    },
+  ],
+  "prevValue": Object {
+    "1": "txPayload",
+    "2": "txPayload",
+  },
+  "result": Object {
+    "1": Object {
+      "txStatusContent": Object {
+        "network": "polygon",
+        "title": Object {
+          "long": "111",
+          "short": "1",
+        },
+      },
+    },
+    "2": "txPayload",
+  },
+}
+`;
+
+exports[`addTxStatus should create new status record and keep old statuses 1`] = `
+Object {
+  "args": Array [
+    "3",
+    Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "3",
+    },
+  ],
+  "prevValue": Object {
+    "1": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "1",
+    },
+    "2": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "2",
+    },
+  },
+  "result": Object {
+    "1": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "1",
+    },
+    "2": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "2",
+    },
+    "3": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "3",
+    },
+  },
+}
+`;
+
+exports[`addTxStatus should replace status for existing transaction ID 1`] = `
+Object {
+  "args": Array [
+    "1",
+    Object {
+      "result": Success {
+        "value": Object {
+          "data": "ReceiptMock",
+          "tag": "SUCCESS",
+        },
+      },
+      "txHash": "111",
+    },
+  ],
+  "prevValue": Object {
+    "1": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "1",
+    },
+    "2": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "2",
+    },
+  },
+  "result": Object {
+    "1": Object {
+      "result": Success {
+        "value": Object {
+          "data": "ReceiptMock",
+          "tag": "SUCCESS",
+        },
+      },
+      "txHash": "111",
+    },
+    "2": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "2",
+    },
+  },
+}
+`;
+
+exports[`displayStatusGlobal should add new status id into globalStatuses queue and keep old statuses 1`] = `
+Object {
+  "args": "3",
+  "prevValue": Array [
+    "1",
+    "2",
+  ],
+  "result": Array [
+    "1",
+    "2",
+    "3",
+  ],
+}
+`;
+
+exports[`displayStatusGlobal should not duplicate items in globalStatuses 1`] = `
+Object {
+  "args": "2",
+  "prevValue": Array [
+    "1",
+    "2",
+  ],
+  "result": Array [
+    "1",
+    "2",
+  ],
+}
+`;
+
+exports[`displayStatusGlobal should remove status from inlineStatuses if it exists there 1`] = `
+Object {
+  "args": "3",
+  "prevValue": Array [
+    "3",
+  ],
+  "result": Array [],
+}
+`;
+
+exports[`displayStatusInline should add new status id into inlineStatuses queue and keep old statuses 1`] = `
+Object {
+  "args": "3",
+  "prevValue": Array [
+    "1",
+    "2",
+  ],
+  "result": Array [
+    "1",
+    "2",
+    "3",
+  ],
+}
+`;
+
+exports[`displayStatusInline should not duplicate items in inlineStatuses 1`] = `
+Object {
+  "args": "2",
+  "prevValue": Array [
+    "1",
+    "2",
+  ],
+  "result": Array [
+    "1",
+    "2",
+  ],
+}
+`;
+
+exports[`displayStatusInline should remove status from globalStatuses if it exists there 1`] = `
+Object {
+  "args": "3",
+  "prevValue": Array [
+    "3",
+  ],
+  "result": Array [],
+}
+`;
+
+exports[`hideStatus should remove tx ID from globalStatuses 1`] = `
+Object {
+  "args": "2",
+  "prevValue": Array [
+    "1",
+    "2",
+  ],
+  "result": Array [
+    "1",
+  ],
+}
+`;
+
+exports[`hideStatus should remove tx ID from inlineStatuses 1`] = `
+Object {
+  "args": "3",
+  "prevValue": Array [
+    "3",
+  ],
+  "result": Array [],
+}
+`;
+
+exports[`hideStatus should remove tx payload 1`] = `
+Object {
+  "args": "2",
+  "prevValue": Object {
+    "1": "txPayload",
+    "2": "txPayload",
+    "3": "txPayload",
+  },
+  "result": Object {
+    "1": "txPayload",
+    "3": "txPayload",
+  },
+}
+`;
+
+exports[`hideStatus should remove tx status 1`] = `
+Object {
+  "args": "2",
+  "prevValue": Object {
+    "1": Object {
+      "result": Success {
+        "value": Object {
+          "data": "ReceiptMock",
+          "tag": "SUCCESS",
+        },
+      },
+      "txHash": "1",
+    },
+    "2": Object {
+      "result": Success {
+        "value": Object {
+          "data": "ReceiptMock",
+          "tag": "SUCCESS",
+        },
+      },
+      "txHash": "2",
+    },
+    "3": Object {
+      "result": Success {
+        "value": Object {
+          "data": "ReceiptMock",
+          "tag": "SUCCESS",
+        },
+      },
+      "txHash": "3",
+    },
+  },
+  "result": Object {
+    "1": Object {
+      "result": Success {
+        "value": Object {
+          "data": "ReceiptMock",
+          "tag": "SUCCESS",
+        },
+      },
+      "txHash": "1",
+    },
+    "3": Object {
+      "result": Success {
+        "value": Object {
+          "data": "ReceiptMock",
+          "tag": "SUCCESS",
+        },
+      },
+      "txHash": "3",
+    },
+  },
+}
+`;
+
+exports[`switchStatusLocation should keep old statuses if switched status is not found 1`] = `
+Object {
+  "args": "5",
+  "prevValue": Object {
+    "globalStatuses": Array [
+      "3",
+      "4",
+    ],
+    "inlineStatuses": Array [
+      "1",
+      "2",
+    ],
+  },
+  "result": Object {
+    "globalStatuses": Array [
+      "3",
+      "4",
+    ],
+    "inlineStatuses": Array [
+      "1",
+      "2",
+    ],
+  },
+}
+`;
+
+exports[`switchStatusLocation should move status from global to inline 1`] = `
+Object {
+  "args": "3",
+  "prevValue": Object {
+    "globalStatuses": Array [
+      "3",
+      "4",
+    ],
+    "inlineStatuses": Array [
+      "1",
+      "2",
+    ],
+  },
+  "result": Object {
+    "globalStatuses": Array [
+      "4",
+    ],
+    "inlineStatuses": Array [
+      "1",
+      "2",
+      "3",
+    ],
+  },
+}
+`;
+
+exports[`switchStatusLocation should move status from inline to global 1`] = `
+Object {
+  "args": "2",
+  "prevValue": Object {
+    "globalStatuses": Array [
+      "3",
+      "4",
+    ],
+    "inlineStatuses": Array [
+      "1",
+      "2",
+    ],
+  },
+  "result": Object {
+    "globalStatuses": Array [
+      "3",
+      "4",
+      "2",
+    ],
+    "inlineStatuses": Array [
+      "1",
+    ],
+  },
+}
+`;
+
+exports[`updateTxStatus should not change statuses if they do not contain the transaction ID 1`] = `
+Object {
+  "args": Array [
+    "3",
+    Object {
+      "txHash": "3",
+    },
+  ],
+  "prevValue": Object {
+    "1": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "1",
+    },
+    "2": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "2",
+    },
+  },
+  "result": Object {
+    "1": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "1",
+    },
+    "2": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "2",
+    },
+  },
+}
+`;
+
+exports[`updateTxStatus should partially update status for existing transaction ID 1`] = `
+Object {
+  "args": Array [
+    "1",
+    Object {
+      "txHash": "111",
+    },
+  ],
+  "prevValue": Object {
+    "1": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "1",
+    },
+    "2": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "2",
+    },
+  },
+  "result": Object {
+    "1": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "111",
+    },
+    "2": Object {
+      "result": Loading {
+        "value": Object {
+          "tag": "LOADING",
+        },
+      },
+      "txHash": "2",
+    },
+  },
+}
+`;

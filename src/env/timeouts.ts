@@ -1,0 +1,2 @@
+export const WEB3_LONG_POOLING_TIMEOUT = 15 * 60 * 1000;
+export const SWITCH_NETWORK_TIMEOUT = 60 * 1000;
