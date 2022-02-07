@@ -28,8 +28,6 @@ export function FormattedAmount(props: FormattedAmountProps) {
     classes: elementsClasses,
     withSI,
     hasSign = false,
-    color,
-    zeroColor,
     symbolVariant,
     symbolSize,
     tooltip = 'default',
@@ -86,7 +84,6 @@ export function FormattedAmount(props: FormattedAmountProps) {
               elementsClasses,
               symbolSize,
               hasSign,
-              zeroColor,
             }}
           />
         );
@@ -100,11 +97,9 @@ export function FormattedAmount(props: FormattedAmountProps) {
               withSI,
               precision,
               elementsClasses,
-              color,
               symbolVariant,
               symbolSize,
               hasSign,
-              zeroColor,
               wrap,
             }}
           />

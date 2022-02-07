@@ -7,6 +7,7 @@ import { AuthButton } from 'services/auth';
 import { makeStyles } from 'core/styles';
 import { routes } from 'routes';
 import { useRouteMatch } from 'utils/useRouteMatch';
+import { GlobalTxStatuses, TxStatusesHeightSaver } from 'services/transactions';
 
 import background from './images/background.png';
 import logo from './images/logo.svg';
@@ -21,6 +22,8 @@ export function BaseLayout({ children }: { children: React.ReactNode }) {
         backgroundSize: 'cover',
       }}
     >
+      <GlobalTxStatuses />
+      <TxStatusesHeightSaver />
       <Container sx={{ pt: 1, pb: 1 }}>
         <Grid container spacing={2} justifyContent="space-between" alignItems="center">
           <Grid item>
@@ -58,9 +61,11 @@ function NavigationLink({ href, title }: { href: string; title: string }) {
   const isActive = useRouteMatch(href, true);
 
   return isActive ? (
-    <Typography fontWeight="bold">{title}</Typography>
+    <Typography fontWeight="bold" sx={{ fontSize: '18px' }}>
+      {title}
+    </Typography>
   ) : (
-    <Link component={NextLink} href={href}>
+    <Link component={NextLink} href={href} sx={{ pl: '8px', pr: '8px', fontSize: '18px' }}>
       {title}
     </Link>
   );
@@ -69,12 +74,7 @@ function NavigationLink({ href, title }: { href: string; title: string }) {
 const useStyles = makeStyles(
   {
     logo: {
-      fontSize: '28px !important',
-    },
-    title: {
-      fontWeight: 'bold',
-      fontSize: 12,
-      lineHeight: '15px',
+      fontSize: '42px !important',
     },
   },
   { name: 'BaseLayout' },

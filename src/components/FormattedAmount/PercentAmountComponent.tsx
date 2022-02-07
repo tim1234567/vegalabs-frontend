@@ -6,34 +6,18 @@ import { makeStyles } from 'core/styles';
 
 import type { ElementsClasses, FormattedAmountProps } from './types';
 
-type Props = Pick<
-  FormattedAmountProps,
-  'withSI' | 'precision' | 'symbolSize' | 'hasSign' | 'zeroColor'
-> & {
+type Props = Pick<FormattedAmountProps, 'withSI' | 'precision' | 'symbolSize' | 'hasSign'> & {
   sum: PercentAmount;
   elementsClasses?: Pick<ElementsClasses, 'symbol'>;
 };
 
 export function PercentAmountComponent(props: Props) {
-  const {
-    sum,
-    withSI,
-    precision,
-    hasSign,
-    symbolSize = 'small',
-    elementsClasses = {},
-    zeroColor: customZeroColor,
-  } = props;
+  const { sum, withSI, precision, hasSign, symbolSize = 'small', elementsClasses = {} } = props;
   const classes = useStyles();
   const { symbol: symbolClass } = elementsClasses;
-  const zeroColor = customZeroColor || (symbolSize === 'inherit' && 'primary') || 'secondary';
 
   return (
-    <span
-      className={cn(classes.root, {
-        [classes.colorSecondary]: zeroColor === 'secondary' && sum.isZero(),
-      })}
-    >
+    <span className={cn(classes.root)}>
       {!sum.isNeg() && hasSign && '+'}
       {sum[withSI ? 'toShortString' : 'toFormattedString'](precision, false)}
       <span
@@ -53,10 +37,6 @@ const useStyles = makeStyles(
   {
     root: {
       whiteSpace: 'nowrap',
-
-      '&$colorSecondary': {
-        opacity: 0.5,
-      },
     },
 
     value: {
@@ -84,8 +64,6 @@ const useStyles = makeStyles(
     sizeSmall: {},
     sizeMedium: {},
     topAligned: {},
-
-    colorSecondary: {},
   },
   { name: 'PercentAmountComponent' },
 );

@@ -1,6 +1,6 @@
 import { makeStyles } from 'core/styles';
 
-const GLOBAL_TX_STATUSES_HEIGHT = 50;
+export const GLOBAL_TX_STATUSES_HEIGHT = 50;
 
 export const useStyles = makeStyles(
   theme => ({
@@ -14,7 +14,8 @@ export const useStyles = makeStyles(
       width: '100%',
       height: GLOBAL_TX_STATUSES_HEIGHT,
       lineHeight: 2.3,
-      background: 'linear-gradient(to left, #574cf2, #4236d0 0%)',
+      background: theme.palette.primary.dark,
+      color: theme.palette.primary.contrastText,
       transition: theme.transitions.create('width'),
 
       [theme.breakpoints.up('md')]: {

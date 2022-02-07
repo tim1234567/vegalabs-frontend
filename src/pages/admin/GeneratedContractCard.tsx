@@ -27,13 +27,13 @@ export function GeneratedContractCard({ onBackClick }: { onBackClick: () => void
           fontFamily: 'monospace',
           color: 'white',
           fontSize: '10px',
-          lineHeight: '13px',
+          lineHeight: 1.36,
           padding: '10px 14px',
           whiteSpace: 'pre',
         }}
       >
         {`import "vegalabs.checker1.sol";
-require(!vegalabs.verify(newState, oldState));`}
+require(vegalabs.verify_short_position(oldAmount, newAmount, collateralAmount, leverage));`}
       </Typography>
       <Box sx={{ mt: 3.5, display: 'flex', justifyContent: 'center' }}>
         <Button

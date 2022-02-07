@@ -161,6 +161,7 @@ const useStyles = makeStyles({
     visibility: 'hidden',
     overflow: 'hidden',
     height: 0,
+    width: 0,
     flexGrow: 0,
     opacity: 0,
   },

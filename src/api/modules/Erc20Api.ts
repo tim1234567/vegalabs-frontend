@@ -32,6 +32,12 @@ export class Erc20Api {
   }
 
   @autobind
+  public getMintTransaction(amount: TokenAmount): TransactionObject {
+    const txContract = this.getErc20ReadonlyContract(amount.currency);
+    return txContract.methods.mint.getTransaction({ amount: amount.toBN() });
+  }
+
+  @autobind
   public getApproveTransaction(spender: string, amount: TokenAmount): TransactionObject {
     const txContract = this.getErc20ReadonlyContract(amount.currency);
     return txContract.methods.approve.getTransaction({ spender, amount: amount.toBN() });

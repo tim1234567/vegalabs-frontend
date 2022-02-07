@@ -1,7 +1,7 @@
 {
   "contracts": {
     "trading": {
-      "address": "",
+      "address": "0x0f04e2C3be21A72574f9d16433ab3dE293aA37F8",
       "networkId": 80001,
       "creationBlock": 0
     }

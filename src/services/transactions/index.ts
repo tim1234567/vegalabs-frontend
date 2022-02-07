@@ -1,5 +1,6 @@
 export * from './containers/GlobalTxStatuses/GlobalTxStatuses';
 export * from './containers/GlobalTxStatuses/GlobalTxStatusesProvider';
+export * from './containers/GlobalTxStatuses/TxStatusesHeightSaver';
 export * from './containers/TxCost';
 export * from './containers/TransactionButton';
 export * from './containers/MultipleTransactionsButton';

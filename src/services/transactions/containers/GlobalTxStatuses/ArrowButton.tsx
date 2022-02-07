@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
-import { ArrowShortCircleIcon } from 'components/icons/ArrowShortCircleIcon';
 import { IconButton, IconButtonProps } from 'components';
 import { makeStyles } from 'core/styles';
 
@@ -19,11 +19,12 @@ export function ArrowButton(
       className={cn(classes.iconButton, className)}
       size={size}
       disabled={disabled}
+      color="inherit"
     >
-      <ArrowShortCircleIcon
+      <NavigateBeforeIcon
+        color="inherit"
         className={cn({
           [classes.arrowRight]: direction === 'right',
-          [classes.disabled]: disabled,
         })}
         fontSize="inherit"
       />
@@ -53,12 +54,14 @@ const useStyles = makeStyles(
       '&:hover': {
         opacity: 1,
       },
+
+      '&.Mui-disabled': {
+        color: 'inherit',
+        opacity: 0.4,
+      },
     },
     arrowRight: {
       transform: 'rotate(180deg)',
-    },
-    disabled: {
-      opacity: 0.3,
     },
   }),
   { name: 'GlobalTxStatusTabTitle' },

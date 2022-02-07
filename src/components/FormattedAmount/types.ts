@@ -17,8 +17,6 @@ export type FormattedAmountProps = {
   hasSign?: boolean;
   withSI?: boolean;
   withInfoIcon?: boolean;
-  color?: 'primary' | 'secondary';
-  zeroColor?: 'primary' | 'secondary';
   symbolVariant?: 'none' | 'text';
   symbolSize?: 'small' | 'medium' | 'inherit';
   tooltip?: JSX.Element | 'none' | 'default';

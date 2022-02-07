@@ -75,7 +75,7 @@ export class Transactions {
   public estimateGas$(
     transaction: TransactionObject,
     network: Network,
-  ): Observable<Either<number>> {
+  ): Observable<Either<number, string>> {
     return this.settingsStore.gasPriceLevel$.pipe(
       switchMap(gasPrice => this.transactionsApi.estimateGas$(transaction, network, gasPrice)),
     );

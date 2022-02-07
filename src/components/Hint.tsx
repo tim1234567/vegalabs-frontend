@@ -38,7 +38,7 @@ export const useStyles = makeStyles(
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: '0.25rem',
+        borderRadius: '6px',
         textAlign: 'center',
         transition: theme.transitions.create('background-color'),
 
@@ -58,9 +58,9 @@ export const useStyles = makeStyles(
         },
 
         '&$colorError': {
-          color: theme.palette.error.main,
+          color: theme.palette.error.dark,
           fontSize: 13,
-          backgroundColor: lighten(theme.palette.error.main, 0.8),
+          backgroundColor: lighten(theme.palette.error.main, 0.9),
         },
 
         '&$withButton': {

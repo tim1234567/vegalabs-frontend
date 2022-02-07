@@ -34,6 +34,7 @@ const getMetamaskSuggestedFeesUrl = (network: Network) =>
 @Service()
 export class GasPricesApi {
   constructor(private web3Manager: Web3Manager, private interceptor: ApiErrorInterceptor) {
+    // eslint-disable-next-line no-constructor-return
     return this.interceptor.getProxiedObj(this);
   }
 

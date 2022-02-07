@@ -78,7 +78,7 @@ export class TransactionsApi {
     transaction: TransactionObject,
     network: Network,
     gasPriceLevel: GasPriceLevel,
-  ): Observable<Either<number>> {
+  ): Observable<Either<number, string>> {
     const chainId = numberToHex(getNetworkID(network));
     return combineLatest([
       this.web3Manager.account$,
@@ -95,8 +95,9 @@ export class TransactionsApi {
           .then(estimateGas => right(estimateGas));
       }),
       catchError(err => {
-        console.error(err.message);
-        return of(left('TransactionsApi: Failed to get estimated gas'));
+        const message = getErrorMsg(err);
+        console.error(message);
+        return of(left(message));
       }),
     );
   }

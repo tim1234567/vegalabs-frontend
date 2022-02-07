@@ -23,6 +23,7 @@ export {
   Card,
   Checkbox,
   FormControlLabel,
+  Alert,
 } from '@mui/material';
 export type {
   IconButtonProps,

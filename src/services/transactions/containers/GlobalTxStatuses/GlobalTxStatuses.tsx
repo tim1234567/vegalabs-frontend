@@ -122,6 +122,7 @@ function GlobalTxStatusesContent({ tabsProps }: { tabsProps: TabProps[] }) {
 
       <Button
         variant="text"
+        color="inherit"
         className={cn(classes.closeButton, { [classes.closed]: !isOpen })}
         key="close"
         aria-label="close"
@@ -137,6 +138,7 @@ function GlobalTxStatusesContent({ tabsProps }: { tabsProps: TabProps[] }) {
     return (
       <Button
         variant="text"
+        color="inherit"
         className={cn(classes.toggleButton, { [classes.closed]: !isOpen })}
         onClick={handleToggleButtonClick}
       >

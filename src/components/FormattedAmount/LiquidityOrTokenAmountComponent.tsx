@@ -9,14 +9,7 @@ import type { ElementsClasses, FormattedAmountProps } from './types';
 
 type Props = Pick<
   FormattedAmountProps,
-  | 'withSI'
-  | 'precision'
-  | 'color'
-  | 'symbolVariant'
-  | 'symbolSize'
-  | 'hasSign'
-  | 'zeroColor'
-  | 'wrap'
+  'withSI' | 'precision' | 'symbolVariant' | 'symbolSize' | 'hasSign' | 'wrap'
 > & {
   sum: LiquidityAmount | TokenAmount;
   elementsClasses?: Pick<ElementsClasses, 'symbol'>;
@@ -28,12 +21,10 @@ export function LiquidityOrTokenAmountComponent(props: Props) {
     sum,
     withSI,
     precision,
-    color = 'secondary',
     symbolVariant = 'text',
     symbolSize = 'inherit',
     hasSign,
     elementsClasses = {},
-    zeroColor,
     wrap = 'nowrap',
   } = props;
   const { symbol: symbolClass } = elementsClasses;
@@ -50,11 +41,7 @@ export function LiquidityOrTokenAmountComponent(props: Props) {
   const { siPower } = detailed;
 
   const value = (
-    <Decimal
-      decimal={{ fractional: detailed.fractional, integer: detailed.integer }}
-      color={siPower ? 'primary' : color}
-      zeroColor={zeroColor}
-    />
+    <Decimal decimal={{ fractional: detailed.fractional, integer: detailed.integer }} />
   );
 
   const endSpace = hideEndSymbolAndSpace

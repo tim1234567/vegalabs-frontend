@@ -81,7 +81,7 @@ export const TxCost = attachStaticFields(
       <Loading data={dataRD} loader={<TxCostSkeleton />}>
         {({ txCost }) => (
           <span>
-            <FormattedAmount sum={txCost.inNetworkCurrency} color="primary" />
+            <FormattedAmount sum={txCost.inNetworkCurrency} />
           </span>
         )}
       </Loading>

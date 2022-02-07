@@ -1,11 +1,11 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Observable, Subscribable } from 'rxjs';
+import { Subscribable } from 'rxjs';
 
 import { RemoteData, success, failure, loading } from '../remoteData';
 import { getErrorMsg } from '../getErrorMsg';
 
 export function useSubscribable<R>(
-  getTarget: () => Observable<R>,
+  getTarget: () => Subscribable<R>,
   deps: any[],
   initial: RemoteData<R, string> = loading,
 ): RemoteData<R, string> {

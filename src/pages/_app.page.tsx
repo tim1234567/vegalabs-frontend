@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Fraction } from '@akropolis-web/primitives';
+import { StyledEngineProvider } from '@mui/material/styles';
 import { Container } from 'typedi';
 
 import { ErrorBoundary, CssBaseline, ThemeProvider, NoSsr } from 'components';
@@ -36,9 +37,11 @@ function App({ Component, pageProps }: AppProps) {
               <ContainerProvider value={container}>
                 <AuthProvider>
                   <CssBaseline />
-                  <BaseLayout>
-                    <Component {...pageProps} />
-                  </BaseLayout>
+                  <StyledEngineProvider injectFirst>
+                    <BaseLayout>
+                      <Component {...pageProps} />
+                    </BaseLayout>
+                  </StyledEngineProvider>
                 </AuthProvider>
               </ContainerProvider>
             </ThemeProvider>
